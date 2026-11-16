@@ -1,0 +1,8 @@
+*.qcow2
+*.img
+*.iso
+*.fd
+state/
+tpm/
+*.sock
+.env

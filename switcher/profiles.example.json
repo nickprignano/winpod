@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "dev": {
+      "container": "winpod-dev",
+      "combo": "dev-stack",
+      "rdp_port": 3389,
+      "username": "User"
+    },
+    "sandbox": {
+      "container": "winpod-sandbox",
+      "combo": "browser-isolated",
+      "rdp_port": 3390,
+      "username": "User"
+    }
+  }
+}

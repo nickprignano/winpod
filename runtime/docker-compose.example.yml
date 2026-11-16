@@ -1,0 +1,18 @@
+services:
+  win-dev:
+    image: winpod-runtime:latest
+    build: .
+    devices:
+      - /dev/kvm:/dev/kvm
+    environment:
+      COMBO_QCOW2: /images/combo/dev-stack-v1.qcow2
+      RAM_MB: "8192"
+      CPUS: "4"
+      RDP_PORT: "3389"
+    ports:
+      - "127.0.0.1:3389:3389"
+    volumes:
+      - /var/lib/winpod/base:/images/base:ro
+      - /var/lib/winpod/combos/dev-stack-v1:/images/combo:ro
+      - /var/lib/winpod/state/dev:/state
+    stop_grace_period: 45s

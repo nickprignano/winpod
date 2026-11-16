@@ -6,3 +6,6 @@ state/
 tpm/
 *.sock
 .env
+__pycache__/
+*.pyc
+

@@ -1,0 +1,14 @@
+[Unit]
+Description=winpod Wayland Kiosk Switcher
+After=docker.service network-online.target
+Requires=docker.service
+
+[Service]
+User=winpod
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+ExecStart=/usr/bin/cage -s -- /usr/bin/foot -e /usr/local/bin/winpod_switcher.py menu
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=graphical.target

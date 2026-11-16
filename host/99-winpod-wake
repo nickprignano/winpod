@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# Install to /usr/lib/systemd/system-sleep/99-winpod-wake
+case "$1" in
+  post)
+    /usr/local/bin/winpod_switcher.py wake >/dev/null 2>&1 || true
+    ;;
+esac
